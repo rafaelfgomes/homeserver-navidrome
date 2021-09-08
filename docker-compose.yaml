@@ -10,6 +10,7 @@ services:
       ND_SCANSCHEDULE: 1h
       ND_LOGLEVEL: info  
       ND_SESSIONTIMEOUT: 24h
+      ND_ADDRESS: localhost
     volumes:
       - "data:/data"
       - "/mnt/HD1/music:/music:ro"
