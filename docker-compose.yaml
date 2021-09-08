@@ -4,14 +4,12 @@ services:
   navidrome:
     image: deluan/navidrome
     container_name: navidrome-service
-    user: 1000:984 # should be owner of volumes
-    restart: unless-stopped
+    restart: always
     environment:
       # Optional: put your config options customization here. Examples:
       ND_SCANSCHEDULE: 1h
       ND_LOGLEVEL: info  
       ND_SESSIONTIMEOUT: 24h
-      ND_BASEURL: ""
     volumes:
       - "data:/data"
       - "/mnt/HD1/music:/music:ro"
