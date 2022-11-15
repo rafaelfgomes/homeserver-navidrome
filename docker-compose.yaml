@@ -3,6 +3,7 @@ version: "3"
 services:
   navidrome:
     image: deluan/navidrome
+    user: ${USER_ID}:${GROUP_IP}
     container_name: navidrome-service
     restart: always
     environment:
@@ -14,6 +15,8 @@ services:
       - "${MUSIC_PATH}:/music:ro"
     networks:
       net:
+    ports:
+      - 45330:4533
 
 volumes: 
   data:
