@@ -6,22 +6,17 @@ services:
     container_name: navidrome-service
     restart: always
     environment:
-      # Optional: put your config options customization here. Examples:
       ND_SCANSCHEDULE: 1h
       ND_LOGLEVEL: info  
       ND_SESSIONTIMEOUT: 24h
-      ND_ADDRESS: 172.40.0.6
     volumes:
       - "data:/data"
-      - "/mnt/HD1/music:/music:ro"
+      - "${MUSIC_PATH}:/music:ro"
     networks:
-      server-network:
-        ipv4_address: 172.40.0.6
+      net:
 
 volumes: 
   data:
 
 networks:
-    server-network:
-        external: true
-        name: server-containers
+  net:
