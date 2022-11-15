@@ -3,7 +3,6 @@ version: "3"
 services:
   navidrome:
     image: deluan/navidrome
-    user: ${USER_ID}:${GROUP_ID}
     container_name: navidrome-service
     restart: always
     environment:
